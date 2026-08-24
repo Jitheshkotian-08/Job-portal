@@ -14,6 +14,7 @@ import com.jobportal.job_portal_backend.repository.JobRepository;
 import com.jobportal.job_portal_backend.repository.UserRepository;
 import com.jobportal.job_portal_backend.service.ApplicationService;
 import com.jobportal.job_portal_backend.service.FileStorageService;
+import com.jobportal.job_portal_backend.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,6 +29,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     private final JobRepository jobRepository;
     private final UserRepository userRepository;
     private final FileStorageService fileStorageService;
+    private final EmailService emailService;
 
     @Override
     public ApplicationResponse applyToJob(Long jobId, Long candidateId, MultipartFile resume) {
@@ -93,6 +95,14 @@ public class ApplicationServiceImpl implements ApplicationService {
 
         application.setStatus(status);
         Application updated = applicationRepository.save(application);
+
+        emailService.sendApplicationStatusEmail(
+                updated.getCandidate().getEmail(),
+                updated.getCandidate().getName(),
+                updated.getJob().getTitle(),
+                updated.getStatus().name()
+        );
+
         return mapToResponse(updated);
     }
 
