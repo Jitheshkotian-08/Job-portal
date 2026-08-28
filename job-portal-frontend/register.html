@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account — Sourced</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+    <div class="auth-brand-panel">
+        <div class="brand-mark">Sourced.</div>
+        <div class="brand-quote">Two sides, one platform. <span>Post roles</span> or <span>find them</span> — pick your side to begin.</div>
+        <div class="brand-foot">Job Portal & Recruitment System</div>
+    </div>
+
+    <div class="auth-form-panel">
+        <div class="auth-form-box">
+            <span class="eyebrow">Get started</span>
+            <h1>Create your account</h1>
+            <p class="subhead">Tell us who you are and let's set you up.</p>
+
+            <div id="registerAlert" class="alert alert-error"></div>
+
+            <form id="registerForm">
+                <div class="field">
+                    <label>I am a...</label>
+                    <div class="role-toggle">
+                        <label class="role-option active" id="candidateOption">
+                            <input type="radio" name="role" value="CANDIDATE" checked>
+                            Candidate
+                        </label>
+                        <label class="role-option" id="recruiterOption">
+                            <input type="radio" name="role" value="RECRUITER">
+                            Recruiter
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" required placeholder="Jane Doe">
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="you@example.com">
+                </div>
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="9876543210">
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required minlength="6" placeholder="At least 6 characters">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="registerBtn">Create account</button>
+            </form>
+
+            <div class="auth-switch">
+                Already have an account? <a href="login.html">Log in</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

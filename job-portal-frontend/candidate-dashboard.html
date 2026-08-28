@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Dashboard — Sourced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container mt-24">
+    <h1>Welcome, <span id="userName"></span> 👋</h1>
+    <p class="text-muted mt-8">Candidate dashboard — coming in the next stage.</p>
+    <button class="btn btn-outline mt-24" onclick="logout()">Log out</button>
+</div>
+<script src="js/api.js"></script>
+<script>
+    requireRole("CANDIDATE");
+    document.getElementById("userName").textContent = getUser().name;
+</script>
+</body>
+</html>

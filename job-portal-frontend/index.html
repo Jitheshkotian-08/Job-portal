@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sourced — Job Portal</title>
+</head>
+<body>
+<script src="js/api.js"></script>
+<script>
+    if (isLoggedIn()) {
+      redirectToDashboard();
+    } else {
+      window.location.href = "login.html";
+    }
+</script>
+</body>
+</html>
