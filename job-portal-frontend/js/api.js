@@ -1,4 +1,5 @@
 const API_BASE_URL = "http://localhost:8080/api";
+const SERVER_BASE_URL = "http://localhost:8080";
 
 // ---------- Token / user storage ----------
 function setSession(token, user) {
@@ -81,4 +82,10 @@ function showAlert(elementId, message) {
 
 function hideAlert(elementId) {
   document.getElementById(elementId).classList.remove("show");
+}
+
+function requireLogin() {
+  if (!isLoggedIn()) {
+    window.location.href = "login.html";
+  }
 }

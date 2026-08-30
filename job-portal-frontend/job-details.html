@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details — Sourced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar" class="navbar"></div>
+
+<div class="container main-content">
+    <a href="jobs.html" class="details-back">← Back to search</a>
+
+    <div id="loadingState" class="text-muted">Loading job...</div>
+
+    <div id="jobContent" class="details-layout" style="display:none;">
+        <div class="details-main card">
+            <span class="badge badge-neutral mb-16" id="jobTypeBadge"></span>
+            <h1 id="jobTitle"></h1>
+            <div class="job-meta mt-8">
+                <span class="job-meta-item" id="jobLocation"></span>
+                <span class="job-meta-item" id="jobPosted"></span>
+            </div>
+            <div class="job-tags mt-16" id="jobTags"></div>
+            <div class="details-desc" id="jobDescription"></div>
+        </div>
+
+        <div class="details-side">
+            <div class="card mb-16">
+                <div class="details-row"><span class="label">Posted by</span><span class="value" id="jobRecruiter"></span></div>
+                <div class="details-row"><span class="label">Salary</span><span class="value" id="jobSalary"></span></div>
+                <div class="details-row"><span class="label">Deadline</span><span class="value" id="jobDeadline"></span></div>
+            </div>
+
+            <div class="card" id="applyCard">
+                <h3 class="mb-16">Apply for this role</h3>
+                <div id="applyAlert" class="alert alert-error"></div>
+                <div id="applyForm">
+                    <div class="field">
+                        <label for="resumeInput">Upload resume</label>
+                        <input type="file" id="resumeInput" accept=".pdf,.doc,.docx">
+                        <div class="field-hint">PDF, DOC, or DOCX — max 5MB</div>
+                    </div>
+                    <button class="btn btn-accent btn-block" id="applyBtn">Apply now</button>
+                </div>
+                <div id="alreadyAppliedState" style="display:none;">
+                    <span class="badge badge-accent mb-16">✓ Application submitted</span>
+                    <p class="text-muted text-small">You can track this in <a href="my-applications.html" style="color:var(--brand); font-weight:600;">My Applications</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/job-details.js"></script>
+</body>
+</html>

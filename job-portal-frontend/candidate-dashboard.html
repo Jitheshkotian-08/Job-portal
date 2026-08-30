@@ -2,20 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Candidate Dashboard — Sourced</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Sourced</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container mt-24">
-    <h1>Welcome, <span id="userName"></span> 👋</h1>
-    <p class="text-muted mt-8">Candidate dashboard — coming in the next stage.</p>
-    <button class="btn btn-outline mt-24" onclick="logout()">Log out</button>
+<div id="navbar" class="navbar"></div>
+
+<div class="container main-content">
+    <div class="page-header">
+        <span class="eyebrow" id="greetingEyebrow"></span>
+        <h1>Welcome back, <span id="userName"></span></h1>
+    </div>
+
+    <div class="quick-links">
+        <a href="jobs.html" class="card quick-link-card">
+            <div class="icon">🔍</div>
+            <h3>Find Jobs</h3>
+            <p class="text-small text-muted">Search and filter open roles</p>
+        </a>
+        <a href="my-applications.html" class="card quick-link-card">
+            <div class="icon">📋</div>
+            <h3>My Applications</h3>
+            <p class="text-small text-muted">Track where you've applied</p>
+        </a>
+        <a href="profile.html" class="card quick-link-card">
+            <div class="icon">👤</div>
+            <h3>Profile</h3>
+            <p class="text-small text-muted">Update your details</p>
+        </a>
+    </div>
+
+    <h2 class="mb-16">Recent applications</h2>
+    <div id="recentList"></div>
+    <div id="emptyState" class="empty-state" style="display:none;">
+        <h3>No applications yet</h3>
+        <p class="mb-16">Start by browsing open roles.</p>
+        <a href="jobs.html" class="btn btn-primary">Browse jobs</a>
+    </div>
 </div>
+
 <script src="js/api.js"></script>
-<script>
-    requireRole("CANDIDATE");
-    document.getElementById("userName").textContent = getUser().name;
-</script>
+<script src="js/utils.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/candidate-dashboard.js"></script>
 </body>
 </html>

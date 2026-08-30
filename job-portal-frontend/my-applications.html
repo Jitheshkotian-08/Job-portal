@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications — Sourced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar" class="navbar"></div>
+
+<div class="container main-content">
+    <div class="page-header">
+        <span class="eyebrow">Your progress</span>
+        <h1>My Applications</h1>
+    </div>
+
+    <div id="appList"></div>
+    <div id="emptyState" class="empty-state" style="display:none;">
+        <h3>No applications yet</h3>
+        <p class="mb-16">Once you apply to a role, it'll show up here.</p>
+        <a href="jobs.html" class="btn btn-primary">Browse jobs</a>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/applications.js"></script>
+</body>
+</html>

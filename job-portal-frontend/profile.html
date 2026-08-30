@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — Sourced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="navbar" class="navbar"></div>
+
+<div class="container main-content">
+    <div class="page-header">
+        <span class="eyebrow">Account</span>
+        <h1>Profile</h1>
+    </div>
+
+    <div class="card profile-card">
+        <div class="profile-avatar" id="profileAvatar"></div>
+
+        <div id="profileAlert" class="alert alert-error"></div>
+        <div id="successAlert" class="alert alert-success"></div>
+
+        <form id="profileForm">
+            <div class="field">
+                <label for="nameInput">Full name</label>
+                <input type="text" id="nameInput" required>
+            </div>
+            <div class="field">
+                <label for="emailInput">Email</label>
+                <input type="email" id="emailInput" disabled>
+                <div class="field-hint">Email can't be changed.</div>
+            </div>
+            <div class="field">
+                <label for="phoneInput">Phone</label>
+                <input type="tel" id="phoneInput">
+            </div>
+            <div class="field">
+                <label>Role</label>
+                <span class="badge badge-brand" id="roleBadge"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" id="saveBtn">Save changes</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
