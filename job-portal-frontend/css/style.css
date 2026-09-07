@@ -437,3 +437,53 @@ h3 { font-size: 1.2rem; }
 /* ===== Skeleton loading ===== */
 .skeleton { background: linear-gradient(90deg, var(--border) 25%, #f0f0ed 50%, var(--border) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: var(--radius-sm); }
 @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* ===== Stat cards ===== */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+.stat-card { padding: 20px; }
+.stat-card .stat-icon { font-size: 1.2rem; margin-bottom: 8px; }
+.stat-card .stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--ink); }
+.stat-card .stat-label { font-size: 0.82rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* ===== Recruiter job row (My Jobs) ===== */
+.job-row {
+  background: var(--surface);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.job-row-info h3 { font-size: 1rem; margin-bottom: 4px; }
+.job-row-meta { display: flex; gap: 10px; align-items: center; font-size: 0.82rem; color: var(--ink-soft); flex-wrap: wrap; }
+.job-row-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+/* ===== Applicant row (View Applicants) ===== */
+.applicant-row {
+  background: var(--surface);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.applicant-info h3 { font-size: 0.98rem; margin-bottom: 2px; }
+.applicant-info .applicant-email { font-size: 0.82rem; color: var(--ink-soft); }
+.applicant-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.status-select {
+  padding: 9px 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  background: var(--surface);
+}
+.status-select:focus { outline: none; border-color: var(--brand); }
+
+/* ===== Form card ===== */
+.form-card { max-width: 680px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }

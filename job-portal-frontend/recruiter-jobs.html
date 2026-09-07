@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — Sourced</title>
+    <title>My Jobs — Sourced</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,26 +13,23 @@
 <div class="container main-content">
     <div class="page-header flex-between">
         <div>
-            <span class="eyebrow" id="greetingEyebrow"></span>
-            <h1>Welcome back, <span id="userName"></span></h1>
+            <span class="eyebrow">Manage listings</span>
+            <h1>My Jobs</h1>
         </div>
         <a href="post-job.html" class="btn btn-primary">+ Post a job</a>
     </div>
 
-    <div id="statsGrid" class="stats-grid"></div>
-
-    <h2 class="mb-16">Your recent jobs</h2>
-    <div id="recentJobs"></div>
+    <div id="jobList"></div>
     <div id="emptyState" class="empty-state" style="display:none;">
         <h3>No jobs posted yet</h3>
-        <p class="mb-16">Post your first role to start receiving applications.</p>
-        <a href="post-job.html" class="btn btn-primary">Post a job</a>
+        <p class="mb-16">Once you post a role, it'll show up here.</p>
+        <a href="post-job.html" class="btn btn-primary">Post your first job</a>
     </div>
 </div>
 
 <script src="js/api.js"></script>
 <script src="js/utils.js"></script>
 <script src="js/navbar.js"></script>
-<script src="js/recruiter-dashboard.js"></script>
+<script src="js/recruiter-jobs.js"></script>
 </body>
 </html>
