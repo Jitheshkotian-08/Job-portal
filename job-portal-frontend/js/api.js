@@ -60,6 +60,13 @@ async function apiFetch(endpoint, options = {}) {
     headers: { ...headers, ...(options.headers || {}) },
   });
 
+  // Session expired or token invalid on a protected route — bounce to login
+  if (response.status === 401 && token && !endpoint.startsWith("/auth/")) {
+    clearSession();
+    window.location.href = "login.html?expired=1";
+    return new Promise(() => {}); // halt further execution on this page
+  }
+
   let data = null;
   const text = await response.text();
   if (text) {

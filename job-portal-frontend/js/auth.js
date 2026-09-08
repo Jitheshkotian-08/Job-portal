@@ -1,3 +1,9 @@
+// Show a message if redirected here due to session expiry
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get("expired") === "1" && document.getElementById("loginAlert")) {
+  showAlert("loginAlert", "Your session expired. Please log in again.");
+}
+
 // ---------- Role toggle (register page only) ----------
 const candidateOption = document.getElementById("candidateOption");
 const recruiterOption = document.getElementById("recruiterOption");
