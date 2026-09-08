@@ -27,7 +27,8 @@ function renderNavbar(activeKey) {
   document.getElementById("navbar").innerHTML = `
     <div class="container">
       <a href="${isRecruiter ? "recruiter-dashboard.html" : "candidate-dashboard.html"}" class="navbar-brand">Sourced.</a>
-      <div class="navbar-links">
+      <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <div class="navbar-links" id="navLinks">
         ${linksHtml}
         <div class="navbar-user">
           <span class="badge badge-neutral">${initials}</span>
@@ -37,4 +38,8 @@ function renderNavbar(activeKey) {
       </div>
     </div>
   `;
+
+  document.getElementById("navToggle").addEventListener("click", () => {
+    document.getElementById("navLinks").classList.toggle("open");
+  });
 }
